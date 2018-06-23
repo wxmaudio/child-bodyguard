@@ -36,7 +36,7 @@
         </javaTypeResolver>
 
         <!--load targetProject from properties-->
-        <javaModelGenerator targetPackage="com.maodou.order.data.center.domain.po" targetProject="../order-data-center-domain/src/main/java">
+        <javaModelGenerator targetPackage="com.xujiang.childbodyguard.domain.po" targetProject="src/main/java">
             <property name="enableSubPackages" value="true" />
             <property name="trimStrings" value="true" />
         </javaModelGenerator>
@@ -48,42 +48,11 @@
         </sqlMapGenerator>
 
         <!--load targetProject from properties-->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.maodou.order.data.center.dao.mapper"  targetProject="src/main/java">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.xujiang.childbodyguard.dao.mapper"  targetProject="src/main/java">
             <property name="enableSubPackages" value="true" />
         </javaClientGenerator>
 
-        <table schema="" tableName="intent_order" domainObjectName="IntentOrderPO">
-            <generatedKey column="id" sqlStatement="MYSQL" identity="true"/>
-        </table>
-        <table schema="" tableName="order_data_summary" domainObjectName="OrderDataSummaryPO">
-            <generatedKey column="id" sqlStatement="MYSQL" identity="true"/>
-        </table>
-
-        <table schema="" tableName="intent_order_goods_info" domainObjectName="OrderGoodsInfoPO">
-            <generatedKey column="id" sqlStatement="MYSQL" identity="true"/>
-        </table>
-
-        <table schema="" tableName="newcar_order" domainObjectName="NewCarOrderPO">
-            <generatedKey column="id" sqlStatement="MYSQL" identity="true"/>
-        </table>
-
-        <table schema="" tableName="newcar_sub_order" domainObjectName="NewCarSubOrderPO">
-            <generatedKey column="id" sqlStatement="MYSQL" identity="true"/>
-        </table>
-
-        <table schema="" tableName="order_status_change_log" domainObjectName="OrderStatusChangeLogPO">
-            <generatedKey column="id" sqlStatement="MYSQL" identity="true"/>
-        </table>
-
-        <table schema="" tableName="kafka_consumer_offset" domainObjectName="KafkaConsumerOffsetPO">
-            <generatedKey column="id" sqlStatement="MYSQL" identity="true"/>
-        </table>
-
-        <table schema="" tableName="newcar_coupon_order" domainObjectName="NewCarCouponOrderPO">
-            <generatedKey column="id" sqlStatement="MYSQL" identity="true"/>
-        </table>
-
-        <table schema="" tableName="order_deal_total_log" domainObjectName="OrderDealTotalLogPO">
+        <table schema="" tableName="t_article" domainObjectName="ArticlePO">
             <generatedKey column="id" sqlStatement="MYSQL" identity="true"/>
         </table>
 
