@@ -2,7 +2,7 @@
 <Configuration status="off" monitorInterval="30">
     <properties>
         <!--<property name="LOG_HOME">/Users/madenghui/projects/logs</property>-->
-        <property name="LOG_HOME">~/projects/logs</property>
+        <property name="LOG_HOME">/root/projects/logs</property>
         <property name="ERROR_LOG_FILE_NAME">error</property>
         <property name="APP_LOG_FILE_NAME">app</property>
         <property name="PATTERN_LAYOUT">[%thread] [-,%X{X-B3-TraceId:-},%style{%X{X-B3-SpanId}}{Magenta},%X{X-Span-Export}] %X{traceId} %X{cno} %highlight{%d} %-5p %style{(%F:%L)}{green} %style{%method}{cyan} - %m%n</property>
