@@ -44,6 +44,7 @@
                 <enabled>true</enabled>
             </snapshots>
         </repository>
+        <!-- for spring cloud-->
         <repository>
             <id>spring-milestones</id>
             <name>Spring Milestones</name>

@@ -1,22 +1,10 @@
-server:
-  port: 8089
 
-logging:
-  level:
-    root: INFO
-  path:
-    home: log
-
-spring:
-  profiles:
-    active: dev
-
-data-Source:
+dataSource:
   master:
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://g1-off-ku-qa.dns.guazi.com:3324/xinche_order?useUnicode=true&characterEncoding=UTF-8
-    username: madenghui1
-    password: 71299bdb
+    url: jdbc:mysql://47.104.85.144:3306/child-bodyguard?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: uAiqwVwjJ8-i
     initialSize: 10
     minIdle: 6
     maxActive: 50
@@ -31,35 +19,10 @@ data-Source:
     maxPoolPreparedStatementPerConnectionSize: 20
     filters: wall,stat
 
-  slave:
-    driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://g1-off-ku-qa.dns.guazi.com:3324/xinche_order?useUnicode=true&characterEncoding=UTF-8
-    username: madenghui1
-    password: 71299bdb
-    initialSize: 10
-    minIdle: 6
-    maxActive: 50
-    maxWait: 60000
-    timeBetweenEvictionRunsMillis: 60000
-    minEvictableIdleTimeMillis: 300000
-    validationQuery: SELECT 'x'
-    testWhileIdle: true
-    testOnBorrow: false
-    testOnReturn: false
-    poolPreparedStatements: false
-    maxPoolPreparedStatementPerConnectionSize: 20
-    filters: wall,stat
+orderDataConfig:
+  financeStatus_map:
 
-dubbo:
-  application:
-    name: order-data-center
-    owner: maodou
-    zkAddress: 127.0.0.1:2181
-    dubboPort: 20889
-    providerConnections: 0
-    providerThreads: 50
-    providerAccepts: 500
-
-dubboConsumer:
-  application:
-    zkAddress: 127.0.0.1:2181
+business:
+  map:
+    STATUS_DEFAULT: 1
+    NEWCAR_CREDIT_COMMIT: 2
