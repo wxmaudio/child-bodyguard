@@ -1,0 +1,39 @@
+server:
+  port: 8089
+
+spring:
+  profiles:
+    active: prod
+
+  data-source:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/scm_wms_test?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: root123
+    initialSize: 10
+    minIdle: 6
+    maxActive: 50
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: false
+    maxPoolPreparedStatementPerConnectionSize: 20
+    filters: wall,stat
+
+dubbo:
+  application:
+    name: order-data-center
+    owner: maodou
+    zkAddress: 127.0.0.1:2181
+    dubboPort: 20889
+    providerConnections: 0
+    providerThreads: 50
+    providerAccepts: 500
+
+dubboConsumer:
+  application:
+    zkAddress: 127.0.0.1:2181

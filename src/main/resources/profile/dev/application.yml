@@ -1,0 +1,40 @@
+
+remoteService:
+  finance:
+    appKey: gzxc
+    appSecret: 2017gnc621
+  coupon:
+    appKey:
+    appSecret:
+  stock:
+    appKey: xinche-order
+    appSecret: MjliNTE2MzdjMDNk
+#    YWIzZTkyNjJlNTZl
+
+dataSource:
+  master:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://47.104.85.144:3306/child-bodyguard?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: uAiqwVwjJ8-i
+    initialSize: 10
+    minIdle: 6
+    maxActive: 50
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: false
+    maxPoolPreparedStatementPerConnectionSize: 20
+    filters: wall,stat
+
+orderDataConfig:
+  financeStatus_map:
+
+business:
+  map:
+    STATUS_DEFAULT: 1
+    NEWCAR_CREDIT_COMMIT: 2

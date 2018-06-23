@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <context id="MybatisGenerator" targetRuntime="MyBatis3">
+        <!-- generate entity时，生成hashcode和equals方法 -->
+        <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin"/>
+        <!-- generate entity时，生成serialVersionUID -->
+        <!--<plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>-->
+        <!-- 这个插件只会增加字符串字段映射到一个JDBC字符的方法 -->
+        <plugin type="org.mybatis.generator.plugins.CaseInsensitiveLikePlugin"/>
+        <!-- genenat entity时,生成toString -->
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
+        <!--自定义注释-->
+        <!--<commentGenerator type="MybatisCommentGenerator">-->
+            <!--<property name="addRemarkComments" value="true"/>-->
+            <!--<property name="dateFormat" value="yyyy-MM-dd HH:MM:SS"/>-->
+        <!--</commentGenerator>-->
+        <commentGenerator>
+            <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+            <property name="suppressAllComments" value="false"/>
+        </commentGenerator>
+        <!--load from properties-->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://47.104.85.144:3306/child-bodyguard?useUnicode=true"
+                        userId="root"
+                        password="uAiqwVwjJ8-i">
+        </jdbcConnection>
+
+        <javaTypeResolver >
+            <property name="forceBigDecimals" value="true" />
+            <property name="TINYINT" value="java.lang.Byte"/>
+            <property name="BIGINT" value="java.lang.Long"/>
+        </javaTypeResolver>
+
+        <!--load targetProject from properties-->
+        <javaModelGenerator targetPackage="com.maodou.order.data.center.domain.po" targetProject="../order-data-center-domain/src/main/java">
+            <property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+
+        <!--load targetProject from properties-->
+        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="true" />
+        </sqlMapGenerator>
+
+        <!--load targetProject from properties-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.maodou.order.data.center.dao.mapper"  targetProject="src/main/java">
+            <property name="enableSubPackages" value="true" />
+        </javaClientGenerator>
+
+        <table schema="" tableName="intent_order" domainObjectName="IntentOrderPO">
+            <generatedKey column="id" sqlStatement="MYSQL" identity="true"/>
+        </table>
+        <table schema="" tableName="order_data_summary" domainObjectName="OrderDataSummaryPO">
+            <generatedKey column="id" sqlStatement="MYSQL" identity="true"/>
+        </table>
+
+        <table schema="" tableName="intent_order_goods_info" domainObjectName="OrderGoodsInfoPO">
+            <generatedKey column="id" sqlStatement="MYSQL" identity="true"/>
+        </table>
+
+        <table schema="" tableName="newcar_order" domainObjectName="NewCarOrderPO">
+            <generatedKey column="id" sqlStatement="MYSQL" identity="true"/>
+        </table>
+
+        <table schema="" tableName="newcar_sub_order" domainObjectName="NewCarSubOrderPO">
+            <generatedKey column="id" sqlStatement="MYSQL" identity="true"/>
+        </table>
+
+        <table schema="" tableName="order_status_change_log" domainObjectName="OrderStatusChangeLogPO">
+            <generatedKey column="id" sqlStatement="MYSQL" identity="true"/>
+        </table>
+
+        <table schema="" tableName="kafka_consumer_offset" domainObjectName="KafkaConsumerOffsetPO">
+            <generatedKey column="id" sqlStatement="MYSQL" identity="true"/>
+        </table>
+
+        <table schema="" tableName="newcar_coupon_order" domainObjectName="NewCarCouponOrderPO">
+            <generatedKey column="id" sqlStatement="MYSQL" identity="true"/>
+        </table>
+
+        <table schema="" tableName="order_deal_total_log" domainObjectName="OrderDealTotalLogPO">
+            <generatedKey column="id" sqlStatement="MYSQL" identity="true"/>
+        </table>
+
+    </context>
+</generatorConfiguration>
