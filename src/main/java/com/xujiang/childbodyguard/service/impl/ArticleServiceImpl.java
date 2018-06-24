@@ -23,7 +23,7 @@ public class ArticleServiceImpl implements ArticleService {
     ArticlePOMapper articlePOMapper;
 
     @Override
-    public Result<List<ArticlePO>> getArticleList(Integer pageNum, Integer pageSize){
+    public Result<List<ArticlePO>> getArticleList(Integer pageNum, Integer pageSize, Long catId){
 
 
         if(pageNum == null){
@@ -34,6 +34,7 @@ public class ArticleServiceImpl implements ArticleService {
         }
         ArticlePOExample articlePOExample = new ArticlePOExample();
         articlePOExample.setOrderByClause("write_time desc");
+        articlePOExample.or().andCatIdEqualTo(catId);
         PageHelper.startPage(pageNum, pageSize);
         List<ArticlePO> articlePOS = articlePOMapper.selectByExample(articlePOExample);
         log.info("res is {}", JSON.toJSON(articlePOS));

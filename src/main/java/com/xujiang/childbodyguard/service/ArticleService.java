@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface ArticleService {
 
-    Result<List<ArticlePO>> getArticleList(Integer pageNum, Integer pageSize);
+    Result<List<ArticlePO>> getArticleList(Integer pageNum, Integer pageSize, Long catId);
 }

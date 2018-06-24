@@ -19,7 +19,7 @@ public class ArticleController {
 
     @RequestMapping("")
     @ResponseBody
-    public Result<List<ArticlePO>> getArticles(Integer pageNum, Integer pageSize) {
-        return articleService.getArticleList(pageNum, pageSize);
+    public Result<List<ArticlePO>> getArticles(Integer pageNum, Integer pageSize, Long catId) {
+        return articleService.getArticleList(pageNum, pageSize, catId);
     }
 }
