@@ -1,11 +1,14 @@
 package com.xujiang.childbodyguard.service.impl;
 
+import com.alibaba.fastjson.JSON;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.pagehelper.PageHelper;
 import com.xujiang.childbodyguard.dao.mapper.ArticlePOMapper;
 import com.xujiang.childbodyguard.domain.Result;
 import com.xujiang.childbodyguard.domain.po.ArticlePO;
 import com.xujiang.childbodyguard.domain.po.ArticlePOExample;
 import com.xujiang.childbodyguard.service.ArticleService;
+import jdk.nashorn.internal.parser.JSONParser;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -33,6 +36,7 @@ public class ArticleServiceImpl implements ArticleService {
         articlePOExample.setOrderByClause("write_time desc");
         PageHelper.startPage(pageNum, pageSize);
         List<ArticlePO> articlePOS = articlePOMapper.selectByExample(articlePOExample);
+        log.info("res is {}", JSON.toJSON(articlePOS));
         return new Result<>(0,"", articlePOS);
     }
 }
