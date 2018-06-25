@@ -8,4 +8,6 @@ import java.util.List;
 public interface ArticleService {
 
     Result<List<ArticlePO>> getArticleList(Integer pageNum, Integer pageSize, Long catId);
+
+    Result<ArticlePO> getArticle(Long articleId);
 }

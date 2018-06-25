@@ -40,4 +40,18 @@ public class ArticleServiceImpl implements ArticleService {
         log.info("res is {}", JSON.toJSON(articlePOS));
         return new Result<>(0,"", articlePOS);
     }
+
+    @Override
+    public Result<ArticlePO> getArticle(Long articleId){
+
+
+        if(articleId == null){
+            return new Result<ArticlePO>(1001 ,"catId is null", null);
+        }
+
+
+        ArticlePO articlePO = articlePOMapper.selectByPrimaryKey(articleId);
+        log.info("res is {}", JSON.toJSON(articlePO));
+        return new Result<>(0,"", articlePO);
+    }
 }
